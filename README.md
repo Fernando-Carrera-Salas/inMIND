@@ -42,7 +42,7 @@ Feel free to send suggestions and report any issues in the [issues section](http
 
 <br/>
 <p align="center">
-  <img src="https://play-lh.googleusercontent.com/uALJqmmGWVdyZBpsic2RGvAXWXiWs_8KbW2haWf72eBD7YmJ9i7wJgWoEXwvgQ189sg=w240-h480-rw" height="150" alt="Project Logo"/>
+  <img src="https://lh3.googleusercontent.com/4AFDqc4iSSMZwkQ8bQ2uT_Bndz4a6nQc7smwpASWIlCh8rvUMRD2GR1sLP8YGcvbZx21" height="150" alt="Project Logo"/>
 </p>
 
 ---
