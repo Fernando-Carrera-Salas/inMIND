@@ -12,7 +12,7 @@
   You may download the app from Play Store by joining <a href="https://groups.google.com/g/fc-apps-closed-testing" target="_blank">this Google Group</a> first.
 </p>
 
-# Mathness!
+# inMIND
 
 ## Summary
 
