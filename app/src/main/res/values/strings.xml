@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">inMIND</string>
+
+    <string-array name="inmind_game_colors">
+        <item>e63946-f4a261-fbee26-4caf50-457b9d-6a4c93</item>
+        <item>e03c31-ff7f41-f7ea48-2dc84d-147bd1-753bbd</item>
+
+        <item>d62728-ff7f0e-ffd700-a1d99b-1f77b4-9467bd</item>
+        <item>ff595e-ff924c-ffca3a-8ac926-1982c4-6a4c93</item>
+
+        <item>cd001a-ef6a00-f2cd00-79c300-1961ae-61007d</item>
+        <item>e50000-ff8d00-ffee00-008121-004cff-760188</item>
+
+        <item>e95e50-f29222-fac723-a1c65d-0cb2af-936fac</item>
+        <item>e377c2-ff7f0e-ffdd4d-bcbd22-17becf-8c6bb1</item>
+
+        <item>d62728-ff7f0e-fdd835-a1d99b-17becf-bcbd22</item>
+        <item>ff00a1-ff7300-90fe00-00fff7-0015ff-8400ff</item>
+
+        <item>ea6759-f88f58-f3c65f-8bc28c-6667ab-f18aad</item>
+        <item>ffadad-ffd6a5-fdffb6-caffbf-9bf6ff-bdb2ff</item>
+
+        <item>eb5133-ff8133-ffc247-76cd65-88dae7-0d3082</item>
+        <item>ef819b-cc041e-ffe619-0cc06c-59c6f2-471f71</item>
+
+        <item>ff006d-ff7d00-ffdd00-adff02-01befe-8f00ff</item>
+        <item>f94144-f3722c-f9c74f-90be6d-43aa8b-577590</item>
+
+        <item>f72585-b5179e-7209b7-4361ee-4cc9f0-80ed99</item>
+        <item>ff6f61-ffab40-fdd835-388e3c-80deea-7e57c2</item>
+
+        <item>ff6d6d-ffa36c-ffd93b-6edc5b-4dabf7-937dff</item>
+        <item>e63946-f4a261-ffd166-06d6a0-118ab2-073b4c</item>
+
+        <item>ff595e-ff9f68-ffee93-8be9c6-2f6690-504070</item>
+        <item>d72638-ff5700-ffb400-8fdb56-00aedf-5932c6</item>
+
+        <item>ff8484-ffa270-fecb60-a7e986-5abbd8-8f77c5</item>
+        <item>ff595e-ff924c-ffca3a-6dbf57-457b9d-9b5de5</item>
+    </string-array>
+</resources>
