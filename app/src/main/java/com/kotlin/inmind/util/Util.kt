@@ -1,9 +1,11 @@
 package com.kotlin.inmind.util
 
+import android.app.Activity
 import android.app.Activity.OVERRIDE_TRANSITION_OPEN
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Build
 import androidx.activity.ComponentActivity
 import androidx.compose.ui.graphics.Color
@@ -148,6 +150,17 @@ object Util
     fun setToPreferences(context: Context, key: String, value: String)
     {
         context.getSharedPreferences(PREFERENCES,MODE_PRIVATE).edit().putString(key,value).apply()
+    }
+
+    fun getVersionCode(activity: Activity): String
+    {
+        try {
+            val pInfo = activity.packageManager.getPackageInfo(activity.packageName, 0)
+            val versionName = pInfo.versionName!!
+            return versionName
+        } catch (e: PackageManager.NameNotFoundException) {
+            return ""
+        }
     }
 
 }

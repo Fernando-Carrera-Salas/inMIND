@@ -74,6 +74,7 @@ object SplashScreen
         onColorWheelSelected: (List<Color>) -> Unit,
         currentColors: List<Color>,
         skipSplash: Boolean,
+        versionCode: String,
     )
     {
         val context = LocalContext.current
@@ -197,6 +198,7 @@ object SplashScreen
                     isAnimationSkipped = isAnimationSkipped,
                     animatedColor = animatedColor,
                     screenMeasurements = screenMeasurements,
+                    versionCode = versionCode,
                     onPlayClick = onPlayClick,
                     onChangeShowOptions = { value ->
                         showOptions = value
@@ -244,6 +246,7 @@ object SplashScreen
         isAnimationSkipped: Boolean,
         animatedColor: Animatable<Color,AnimationVector4D>,
         screenMeasurements: ScreenMeasurements,
+        versionCode: String,
 
         onPlayClick: () -> Unit,
         onChangeShowOptions: (Boolean) -> Unit,
@@ -341,7 +344,7 @@ object SplashScreen
                     )
 
                     Text(
-                        text = "0.3",
+                        text = versionCode,
                         modifier = Modifier
                             .padding(10.dp)
                             .fillMaxWidth(),

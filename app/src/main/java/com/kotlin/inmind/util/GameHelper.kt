@@ -575,16 +575,18 @@ object GameHelper
                 }
             }
 
-            userShape.alpha = 0.25f
-            bestMatch!!.second.beingChecked = true
-            bestMatch.second.alpha = 1f
+            if (bestMatch!=null)
+            {
+                userShape.alpha = 0.25f
+                bestMatch.second.beingChecked = true
+                bestMatch.second.alpha = 1f
 
-            val addScore = scoreShape(userShape, bestMatch.second)
-            matched.add(bestMatch.first)
+                val addScore = scoreShape(userShape, bestMatch.second)
+                matched.add(bestMatch.first)
 
-            goalShape = GoalState(
-                icon = minShapes[SHAPES.indexOf(bestMatch.second.type)],
-                color =
+                goalShape = GoalState(
+                    icon = minShapes[SHAPES.indexOf(bestMatch.second.type)],
+                    color =
                     if (addScore.second.contains('T'))
                     {
                         selectedColors[3]
@@ -594,16 +596,16 @@ object GameHelper
 
                         selectedColors[0]
                     },
-                show = true,
-            )
+                    show = true,
+                )
 
-            onChangeGoalShape(goalShape)
+                onChangeGoalShape(goalShape)
 
-            delay(500)
+                delay(500)
 
-            goalColor = GoalState(
-                icon = R.drawable.palette,
-                color =
+                goalColor = GoalState(
+                    icon = R.drawable.palette,
+                    color =
                     if (addScore.second.contains('C'))
                     {
                         selectedColors[3]
@@ -613,16 +615,16 @@ object GameHelper
 
                         selectedColors[0]
                     },
-                show = true,
-            )
+                    show = true,
+                )
 
-            onChangeGoalColor(goalColor)
+                onChangeGoalColor(goalColor)
 
-            delay(500)
+                delay(500)
 
-            goalLocation = GoalState(
-                icon = R.drawable.location,
-                color =
+                goalLocation = GoalState(
+                    icon = R.drawable.location,
+                    color =
                     when
                     {
                         addScore.second.contains("E") -> {
@@ -635,62 +637,63 @@ object GameHelper
                             selectedColors[0]
                         }
                     },
-                show = true,
-            )
-
-            onChangeGoalLocation(goalLocation)
-
-            delay(500)
-
-            targetLevelProgress = currentLevelProgress + addScore.first
-
-            onChangeCurrentLevelState(
-                UserLevelAndProgressState(
-                    level = currentUserLevel,
-                    progress = currentLevelProgress,
-                    targetProgress = targetLevelProgress,
-                    maxProgress = currentLevelMaxProgress,
-                    nextLevelMaxProgress = nextLevelMaxProgress,
+                    show = true,
                 )
-            )
 
-            delay(2000)
+                onChangeGoalLocation(goalLocation)
 
-            if (currentLevelProgress+addScore.first>=currentLevelMaxProgress)
-            {
-                currentUserLevel++
-                currentLevelProgress = currentLevelProgress + addScore.first - currentLevelMaxProgress
-                currentLevelMaxProgress = nextLevelMaxProgress
-                nextLevelMaxProgress = maxProgressForLevel(currentUserLevel)
-                delay(1000)
-            }
-            else
-            {
-                currentLevelProgress += addScore.first
-            }
+                delay(500)
 
-            onChangeGoalShape(GoalState(goalShape.icon,goalShape.color,false))
-            onChangeGoalColor(GoalState(goalColor.icon,goalColor.color,false))
-            onChangeGoalLocation(GoalState(goalLocation.icon,goalLocation.color,false))
+                targetLevelProgress = currentLevelProgress + addScore.first
 
-            levelProgress(
-                currentLevelProgress,
-                currentUserLevel
-            )
-            targetLevelProgress = 0
-
-            onChangeCurrentLevelState(
-                UserLevelAndProgressState(
-                    level = currentUserLevel,
-                    progress = currentLevelProgress,
-                    targetProgress = targetLevelProgress,
-                    maxProgress = currentLevelMaxProgress,
-                    nextLevelMaxProgress = nextLevelMaxProgress,
+                onChangeCurrentLevelState(
+                    UserLevelAndProgressState(
+                        level = currentUserLevel,
+                        progress = currentLevelProgress,
+                        targetProgress = targetLevelProgress,
+                        maxProgress = currentLevelMaxProgress,
+                        nextLevelMaxProgress = nextLevelMaxProgress,
+                    )
                 )
-            )
 
-            if (allCorrect&&addScore.second!="TCE")
-                allCorrect = false
+                delay(2000)
+
+                if (currentLevelProgress+addScore.first>=currentLevelMaxProgress)
+                {
+                    currentUserLevel++
+                    currentLevelProgress = currentLevelProgress + addScore.first - currentLevelMaxProgress
+                    currentLevelMaxProgress = nextLevelMaxProgress
+                    nextLevelMaxProgress = maxProgressForLevel(currentUserLevel)
+                    delay(1000)
+                }
+                else
+                {
+                    currentLevelProgress += addScore.first
+                }
+
+                onChangeGoalShape(GoalState(goalShape.icon,goalShape.color,false))
+                onChangeGoalColor(GoalState(goalColor.icon,goalColor.color,false))
+                onChangeGoalLocation(GoalState(goalLocation.icon,goalLocation.color,false))
+
+                levelProgress(
+                    currentLevelProgress,
+                    currentUserLevel
+                )
+                targetLevelProgress = 0
+
+                onChangeCurrentLevelState(
+                    UserLevelAndProgressState(
+                        level = currentUserLevel,
+                        progress = currentLevelProgress,
+                        targetProgress = targetLevelProgress,
+                        maxProgress = currentLevelMaxProgress,
+                        nextLevelMaxProgress = nextLevelMaxProgress,
+                    )
+                )
+
+                if (allCorrect&&addScore.second!="TCE")
+                    allCorrect = false
+            }
 
             delay(600)
             shapes.forEach {

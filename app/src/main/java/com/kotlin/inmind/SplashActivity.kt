@@ -14,6 +14,7 @@ import com.kotlin.inmind.composable.SplashScreen.SplashScreenComposable
 import com.kotlin.inmind.ui.theme.inMindTheme
 import com.kotlin.inmind.util.Constants.INMIND_COLORS
 import com.kotlin.inmind.util.Util.changeActivitySlide
+import com.kotlin.inmind.util.Util.getVersionCode
 import com.kotlin.inmind.util.Util.setToPreferences
 
 @SuppressLint("CustomSplashScreen")
@@ -41,6 +42,7 @@ class SplashActivity : ComponentActivity()
                         },
                         currentColors = inMind.selectedColors,
                         skipSplash = inMind.bSplash,
+                        versionCode = getVersionCode(this),
                     )
                 }
             }
