@@ -35,9 +35,14 @@ class GameActivity : ComponentActivity()
 
         val currentLevel = getFromPreferences(this, INMIND_LEVEL,1)
 
+        var currentProgress = getFromPreferences(this, INMIND_PROGRESS,0)
+        val maxProgress = maxProgressForLevel(currentLevel)
+        if (currentProgress>=maxProgress)
+            currentProgress = maxProgress - 10
+
         val gameConfig = generateGameConfig(level = currentLevel,
-            currentProgress = getFromPreferences(this, INMIND_PROGRESS,0),
-            maxProgress = maxProgressForLevel(currentLevel),
+            currentProgress = currentProgress,
+            maxProgress = maxProgress,
             nextMaxProgress = maxProgressForLevel(currentLevel+1)
         )
 

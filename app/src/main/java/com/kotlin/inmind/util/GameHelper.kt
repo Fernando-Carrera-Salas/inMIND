@@ -86,14 +86,13 @@ object GameHelper
     }
 
 
-
     fun maxProgressForLevel(
         level: Int
     ): Int {
         if (level == 1)
             return 800
-        val multiplier = (level - 1) * 1.2
-        return (multiplier * 1200).toInt()
+        val multiplier = (level - 1) * 1.1
+        return (multiplier * 1100).toInt()
     }
 
     fun calculateSidePadding(
@@ -144,16 +143,6 @@ object GameHelper
                 gameTime = 60
             }
             2 -> {
-                boardSize = (3..5).random()
-                shapeSize = if (boardSize==5) 2 else 1
-                totalShapes = if (boardSize==3) 2 else 1
-                shapeTypes = 3
-                maxType = 1
-                maxColor = 1
-                memoryTime = 30
-                gameTime = 60
-            }
-            3 -> {
                 boardSize = (4..6).random()
                 shapeSize = if (boardSize==6) 2 else 1
                 totalShapes = 2
@@ -163,17 +152,7 @@ object GameHelper
                 memoryTime = 30
                 gameTime = 60
             }
-            4 -> {
-                boardSize = (5..7).random()
-                shapeSize = 2
-                totalShapes = 2
-                shapeTypes = 6
-                maxType = 1
-                maxColor = 1
-                memoryTime = 25
-                gameTime = 55
-            }
-            5 -> {
+            3 -> {
                 boardSize = (5..8).random()
                 shapeSize = if (boardSize==8) 3 else 2
                 totalShapes = if (boardSize==5) 3 else 2
@@ -183,17 +162,7 @@ object GameHelper
                 memoryTime = 25
                 gameTime = 55
             }
-            6 -> {
-                boardSize = (5..9).random()
-                shapeSize = if (boardSize==9) 3 else 2
-                totalShapes = if (boardSize==5) 3 else 2
-                shapeTypes = 6
-                maxType = 1
-                maxColor = 1
-                memoryTime = 25
-                gameTime = 55
-            }
-            7 -> {
+            4 -> {
                 boardSize = (6..9).random()
                 shapeSize = if (boardSize==9) 3 else 2
                 totalShapes = if (boardSize==6) 3 else 2
@@ -203,28 +172,8 @@ object GameHelper
                 memoryTime = 25
                 gameTime = 55
             }
-            8 -> {
-                boardSize = (6..9).random()
-                shapeSize = 2
-                totalShapes = 3
-                shapeTypes = 6
-                maxType = 1
-                maxColor = 1
-                memoryTime = 25
-                gameTime = 55
-            }
-            9 -> {
+            5 -> {
                 boardSize = (7..10).random()
-                shapeSize = if (boardSize==10) 3 else 2
-                totalShapes = 3
-                shapeTypes = 6
-                maxType = 1
-                maxColor = 1
-                memoryTime = 25
-                gameTime = 50
-            }
-            10 -> {
-                boardSize = (8..10).random()
                 shapeSize = if (boardSize==10) 3 else 2
                 totalShapes = 3
                 shapeTypes = 6
@@ -238,6 +187,7 @@ object GameHelper
                 return autoGenerateGameConfig(level,currentProgress, maxProgress, nextMaxProgress)
             }
         }
+
 
         return GameConfig(
             boardSize = boardSize,
